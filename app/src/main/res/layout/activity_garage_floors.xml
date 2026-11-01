@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="110dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp">
+
+            <include layout="@layout/include_garage_header" />
+
+            <!-- overview/floors switch (floors view) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_pill_outline"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/tab_overview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Overview"
+                    android:textColor="@color/ucf_ink_2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tab_floors"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_ink"
+                    android:gravity="center"
+                    android:text="Floors"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- banner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:backgroundTint="@color/ucf_green_soft"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_green" />
+
+                <TextView
+                    style="@style/Ucf.BodyBold"
+                    android:layout_marginStart="10dp"
+                    android:text="Best bet for Commuter: Roof"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <!-- legend -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="4dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_box"
+                    android:backgroundTint="@color/ucf_faculty" />
+
+                <TextView
+                    style="@style/Ucf.Subtitle"
+                    android:layout_marginStart="6dp"
+                    android:text="Faculty &amp; Staff"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="14dp"
+                    android:background="@drawable/bg_box"
+                    android:backgroundTint="@color/ucf_ink" />
+
+                <TextView
+                    style="@style/Ucf.Subtitle"
+                    android:layout_marginStart="6dp"
+                    android:text="Commuter"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="14dp"
+                    android:background="@drawable/bg_box"
+                    android:backgroundTint="@color/ucf_grey" />
+
+                <TextView
+                    style="@style/Ucf.Subtitle"
+                    android:layout_marginStart="6dp"
+                    android:text="Resident"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- floor list -->
+            <LinearLayout
+                android:id="@+id/list_floors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp">
+
+                <!-- first floor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Floor 1"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="100% Faculty &amp; Staff"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="80% full"
+                            android:textColor="@color/ucf_orange"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="0dp"
+                            android:layout_weight="100"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_faculty" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- second floor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Floor 2"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="50% Faculty · 50% Commuter"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="Full"
+                            android:textColor="@color/ucf_red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="50"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_faculty" />
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="50"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_ink" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- third floor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Floor 3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="70% Commuter · 30% Resident"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="96% full"
+                            android:textColor="@color/ucf_red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="70"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_ink" />
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="30"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_grey" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- fourth floor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Floor 4"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="100% Commuter"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="93% full"
+                            android:textColor="@color/ucf_orange"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="0dp"
+                            android:layout_weight="100"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_ink" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- fifth floor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Floor 5"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="100% Commuter"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="88% full"
+                            android:textColor="@color/ucf_orange"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="0dp"
+                            android:layout_weight="100"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_ink" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- roof -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Roof"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="100% Commuter"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="58% full"
+                            android:textColor="@color/ucf_green"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="0dp"
+                            android:layout_weight="100"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_ink" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- bottom action bar -->
+    <include
+        layout="@layout/include_garage_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</FrameLayout>

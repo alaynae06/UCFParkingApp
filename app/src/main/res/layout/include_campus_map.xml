@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- include_campus_map: the campus map + garage pins. Reused on Landing, Map Home and Report.
-     Pins are placed by % across (horizontal_bias) and % down (vertical_bias). -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Map drawing -->
+    <!-- map drawing -->
     <ImageView
         android:id="@+id/img_map"
         android:layout_width="0dp"
@@ -19,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- "You are here" dot -->
+    <!-- location dot -->
     <View
         android:id="@+id/dot_you_are_here"
         android:layout_width="14dp"
@@ -34,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintVertical_bias="0.84" />
 
-    <!-- Garage C pin -->
+    <!-- garage C pin -->
     <LinearLayout
         android:id="@+id/pin_garage_c"
         android:layout_width="wrap_content"
@@ -72,7 +71,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Garage D pin -->
+    <!-- garage D pin -->
     <LinearLayout
         android:id="@+id/pin_garage_d"
         android:layout_width="wrap_content"
@@ -110,7 +109,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Garage I pin -->
+    <!-- garage I pin -->
     <LinearLayout
         android:id="@+id/pin_garage_i"
         android:layout_width="wrap_content"
@@ -148,7 +147,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Garage B pin -->
+    <!-- garage B pin -->
     <LinearLayout
         android:id="@+id/pin_garage_b"
         android:layout_width="wrap_content"
@@ -186,7 +185,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Garage A pin -->
+    <!-- garage A pin -->
     <LinearLayout
         android:id="@+id/pin_garage_a"
         android:layout_width="wrap_content"
@@ -224,7 +223,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Garage H pin -->
+    <!-- garage H pin -->
     <LinearLayout
         android:id="@+id/pin_garage_h"
         android:layout_width="wrap_content"
@@ -262,7 +261,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Surface lot "P" markers -->
+    <!-- surface lot markers -->
     <TextView
         android:layout_width="18dp"
         android:layout_height="18dp"

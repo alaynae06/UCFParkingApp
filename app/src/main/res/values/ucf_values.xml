@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ucf_values: all colors and text/button styles for the UCF Parking UI -->
+
 <resources>
     <style name="Ucf" />   <!-- empty parent so the "Ucf.___" style names work -->
 
-    <!-- ===== COLORS ===== -->
-    <color name="ucf_bg">#F7F5EF</color>      <!-- cream screen background -->
-    <color name="ucf_ink">#141414</color>     <!-- near-black: titles, buttons -->
-    <color name="ucf_ink_2">#6B6A65</color>   <!-- grey: subtitles, captions -->
-    <color name="ucf_ink_3">#A3A19A</color>   <!-- light grey: hint text -->
+    <!-- colors -->
+    <color name="ucf_bg">#F7F5EF</color>      <!-- background color -->
+    <color name="ucf_ink">#141414</color>     <!-- titls and button color -->
+    <color name="ucf_ink_2">#6B6A65</color>   <!-- subtitles and captions color -->
+    <color name="ucf_ink_3">#A3A19A</color>   <!-- hint color -->
     <color name="ucf_line">#E8E4D9</color>    <!-- thin border color -->
     <color name="ucf_track">#E6E3DA</color>   <!-- empty part of progress bars -->
     <color name="ucf_gold">#E9B824</color>    <!-- UCF gold -->
-    <color name="ucf_gold_soft">#FCF0C8</color> <!-- pale gold: banners, active nav tab -->
-    <color name="ucf_grey">#7D7C77</color>    <!-- Resident permit / "blocked" -->
+    <color name="ucf_gold_soft">#FCF0C8</color> <!-- banners, active nav -->
+    <color name="ucf_grey">#7D7C77</color>    <!-- resident permit color -->
     <color name="ucf_grey_soft">#EEEDE8</color>
-    <color name="ucf_red">#D9483B</color>     <!-- "Full" / "Closed" -->
+    <color name="ucf_red">#D9483B</color>     <!-- full/closed color -->
     <color name="ucf_red_soft">#FBE4E1</color>
-    <color name="ucf_orange">#E8892A</color>  <!-- "Filling fast" -->
+    <color name="ucf_orange">#E8892A</color>  <!-- filling warning color -->
     <color name="ucf_orange_soft">#FCEBD7</color>
-    <color name="ucf_green">#2E9E5B</color>   <!-- "Open" -->
+    <color name="ucf_green">#2E9E5B</color>   <!-- open color -->
     <color name="ucf_green_soft">#E2F3E8</color>
-    <color name="ucf_scrim">#66000000</color> <!-- see-through black over the map -->
+    <color name="ucf_faculty">#B8901A</color>  <!-- staff floors color -->
+    <color name="ucf_scrim">#66000000</color> <!-- black translucent for map -->
 
-    <!-- ===== TEXT STYLES ===== -->
+    <!-- text styles -->
     <style name="Ucf.Title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -60,8 +61,8 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <!-- ===== COMPONENT STYLES ===== -->
-    <!-- Black pill button -->
+    <!-- component styles -->
+    <!-- black pill button -->
     <style name="Ucf.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">52dp</item>
@@ -72,7 +73,7 @@
         <item name="android:background">@drawable/bg_pill</item>
         <item name="android:backgroundTint">@color/ucf_ink</item>
     </style>
-    <!-- Text input box -->
+    <!-- text input box -->
     <style name="Ucf.Input">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -82,7 +83,7 @@
         <item name="android:textColorHint">@color/ucf_ink_3</item>
         <item name="android:textSize">14sp</item>
     </style>
-    <!-- Filter chip on the map ("Commuter", "Resident"...) -->
+    <!-- filtewr icon on map -->
     <style name="Ucf.Chip">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">32dp</item>
@@ -95,7 +96,7 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <!-- Small colored status tag ("Filling fast", "Open"); set backgroundTint + textColor per use -->
+    <!-- status tag -->
     <style name="Ucf.Tag">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

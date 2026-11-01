@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- include_bottom_nav_map: bottom tab bar with the MAP tab highlighted.
-     Selected tab = pale-gold pill behind the icon + black bold text; other tabs are grey. -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +10,7 @@
     android:orientation="horizontal"
     android:paddingVertical="10dp">
 
-    <!-- Map tab (SELECTED) -->
+    <!-- map tab -->
     <LinearLayout
         android:id="@+id/nav_map"
         android:layout_width="0dp"
@@ -38,7 +37,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Forum tab -->
+    <!-- forum tab -->
     <LinearLayout
         android:id="@+id/nav_forum"
         android:layout_width="0dp"
@@ -62,7 +61,7 @@
             android:textSize="11sp" />
     </LinearLayout>
 
-    <!-- Alerts tab -->
+    <!-- alerts tab -->
     <LinearLayout
         android:id="@+id/nav_alerts"
         android:layout_width="0dp"
@@ -86,7 +85,7 @@
             android:textSize="11sp" />
     </LinearLayout>
 
-    <!-- Profile tab -->
+    <!-- profile tab -->
     <LinearLayout
         android:id="@+id/nav_profile"
         android:layout_width="0dp"

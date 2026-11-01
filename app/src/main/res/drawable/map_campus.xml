@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- map_campus: simple drawn campus map (ring road, pond, green areas). Placeholder until a real map is added. -->
+
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="360dp" android:height="320dp"
     android:viewportWidth="360" android:viewportHeight="320">
@@ -19,7 +19,7 @@
     <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="7" android:pathData="M65,165a115,115 0 1,0 230,0a115,115 0 1,0 -230,0z"/>
     <!-- walkways from the center -->
     <path android:fillColor="#00000000" android:strokeColor="#F7F4EC" android:strokeWidth="3" android:pathData="M180,50V125M180,205V280M65,165H140M220,165H295M99,84L152,137M208,193L261,246M261,84L208,137M152,193L99,246"/>
-    <!-- inner circle + reflecting pond -->
+    <!-- inner circle and reflecting pond -->
     <path android:fillColor="#E4E0D3" android:strokeColor="#FFFFFF" android:strokeWidth="4" android:pathData="M140,165a40,40 0 1,0 80,0a40,40 0 1,0 -80,0z"/>
     <path android:fillColor="#BFD5E6" android:pathData="M160,165a20,20 0 1,0 40,0a20,20 0 1,0 -40,0z"/>
 </vector>

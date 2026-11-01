@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Alerts - Notification Settings. Latest alert banner, followed garages with toggles,
+     "notify me when" toggles, and the tab bar with Alerts selected. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="110dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp">
+
+            <!-- ===== HEADER ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Ucf.Title"
+                        android:text="Alerts"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        style="@style/Ucf.Subtitle"
+                        android:text="Get pinged when your garages change"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btn_settings"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_pill_outline"
+                    android:contentDescription="Settings"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_settings" />
+            </LinearLayout>
+
+            <!-- ===== LATEST ALERT (black banner) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_box"
+                android:backgroundTint="@color/ucf_ink"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_orange"
+                    android:contentDescription="Alert"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_bell"
+                    android:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Ucf.BodyBold"
+                        android:text="Garage B is 88% full"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_marginTop="2dp"
+                        android:text="Likely full in ~20 min · 2 min ago"
+                        android:textColor="@color/ucf_ink_3"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== GARAGES YOU FOLLOW ===== -->
+            <TextView
+                style="@style/Ucf.Label"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="24dp"
+                android:text="Garages you follow" />
+
+            <LinearLayout
+                android:id="@+id/list_followed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp">
+
+                <!-- Garage B -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_orange_soft"
+                        android:gravity="center"
+                        android:text="B"
+                        android:textColor="@color/ucf_orange"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Garage B"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Commuter · 88% full"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_garage_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Garage A -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_green_soft"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/ucf_green"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Garage A"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Commuter · Faculty · 45% full"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_garage_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Garage I -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_green_soft"
+                        android:gravity="center"
+                        android:text="I"
+                        android:textColor="@color/ucf_green"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Garage I"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Commuter · Resident · 30% full"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_garage_i"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== NOTIFY ME WHEN A GARAGE... ===== -->
+            <TextView
+                style="@style/Ucf.Label"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="24dp"
+                android:text="Notify me when a garage" />
+
+            <LinearLayout
+                android:id="@+id/list_triggers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp">
+
+                <!-- Reaches capacity -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_grey_soft"
+                        android:gravity="center"
+                        android:text="⊖"
+                        android:textColor="@color/ucf_ink"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Reaches capacity"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_capacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Is likely to fill soon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_grey_soft"
+                        android:gravity="center"
+                        android:text="↗"
+                        android:textColor="@color/ucf_ink"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Is likely to fill soon"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Based on past trends"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_fill_soon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Closes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_grey_soft"
+                        android:gravity="center"
+                        android:text="🔒"
+                        android:textColor="@color/ucf_ink"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Closes"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_closes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Reopens -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_grey_soft"
+                        android:gravity="center"
+                        android:text="🔓"
+                        android:textColor="@color/ucf_ink"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Reopens"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_reopens"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ucf_line" />
+
+                <!-- Empties out -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="62dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_grey_soft"
+                        android:gravity="center"
+                        android:text="↓"
+                        android:textColor="@color/ucf_ink"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Empties out"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_empties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/switch_track" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ===== BOTTOM TAB BAR ===== -->
+    <include
+        layout="@layout/include_bottom_nav_alerts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</FrameLayout>

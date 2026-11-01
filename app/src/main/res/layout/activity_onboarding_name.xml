@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Onboarding step 1 - preferred name -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Progress bar: step 1 of 2 (red part = 1, empty part = 9) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_pill"
+        android:backgroundTint="@color/ucf_track"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_red" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/Ucf.Label"
+        android:layout_marginTop="28dp"
+        android:text="Step 1 of 2"
+        android:textColor="@color/ucf_ink" />
+
+    <TextView
+        style="@style/Ucf.Title"
+        android:layout_marginTop="8dp"
+        android:text="What’s your preferred name?" />
+
+    <EditText
+        android:id="@+id/input_name"
+        style="@style/Ucf.Input"
+        android:layout_marginTop="24dp"
+        android:hint="e.g. Alex"
+        android:inputType="textPersonName|textCapWords" />
+
+    <!-- Pushes the button to the bottom -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/btn_continue"
+        style="@style/Ucf.Button"
+        android:text="Continue" />
+
+    <TextView
+        android:id="@+id/btn_skip"
+        style="@style/Ucf.Caption"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:text="I’ll do this later" />
+</LinearLayout>

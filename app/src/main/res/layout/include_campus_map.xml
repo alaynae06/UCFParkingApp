@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- include_campus_map: the campus map + garage pins. Reused on Landing, Map Home and Report.
+     Pins are placed by % across (horizontal_bias) and % down (vertical_bias). -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map drawing -->
+    <ImageView
+        android:id="@+id/img_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Campus map"
+        android:scaleType="centerCrop"
+        android:src="@drawable/map_campus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- "You are here" dot -->
+    <View
+        android:id="@+id/dot_you_are_here"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_pill"
+        android:backgroundTint="@color/ucf_ink"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintVertical_bias="0.84" />
+
+    <!-- Garage C pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintVertical_bias="0.22">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_red"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_c_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="Full"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Garage D pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintVertical_bias="0.20">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_green"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_d_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="45%"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Garage I pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_i"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintVertical_bias="0.55">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_green"
+            android:gravity="center"
+            android:text="I"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_i_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="62%"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Garage B pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintVertical_bias="0.55">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_orange"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_b_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="88%"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Garage A pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintVertical_bias="0.88">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_green"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_a_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="30%"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Garage H pin -->
+    <LinearLayout
+        android:id="@+id/pin_garage_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintVertical_bias="0.88">
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_orange"
+            android:gravity="center"
+            android:text="H"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_pin_h_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:text="93%"
+            android:textColor="@color/ucf_ink"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Surface lot "P" markers -->
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/bg_box"
+        android:backgroundTint="@color/ucf_ink"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintVertical_bias="0.40" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/bg_box"
+        android:backgroundTint="@color/ucf_gold"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintVertical_bias="0.30" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/bg_box"
+        android:backgroundTint="@color/ucf_ink"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.60"
+        app:layout_constraintVertical_bias="0.78" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Login -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        style="@style/Ucf.Title"
+        android:layout_marginTop="40dp"
+        android:text="Sign in to your account" />
+
+    <TextView
+        style="@style/Ucf.Subtitle"
+        android:layout_marginTop="8dp"
+        android:text="Use your UCF email credentials to access your parking profile." />
+
+    <TextView
+        style="@style/Ucf.Label"
+        android:layout_marginTop="32dp"
+        android:text="UCF Email" />
+
+    <EditText
+        android:id="@+id/input_email"
+        style="@style/Ucf.Input"
+        android:layout_marginTop="8dp"
+        android:hint="xx123456@ucf.edu"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        style="@style/Ucf.Label"
+        android:layout_marginTop="20dp"
+        android:text="Password" />
+
+    <EditText
+        android:id="@+id/input_password"
+        style="@style/Ucf.Input"
+        android:layout_marginTop="8dp"
+        android:hint="••••••••••"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/btn_sign_in"
+        style="@style/Ucf.Button"
+        android:layout_marginTop="56dp"
+        android:text="Sign In" />
+</LinearLayout>

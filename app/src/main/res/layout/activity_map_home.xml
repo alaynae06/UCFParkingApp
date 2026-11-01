@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Map - Home. Map on top, "Garages near you" sheet below, tab bar at the bottom. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg">
+
+    <!-- ===== MAP AREA ===== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="440dp">
+
+        <include layout="@layout/include_campus_map" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp">
+
+            <!-- Search bar -->
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_pill"
+                android:elevation="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Search"
+                    android:src="@drawable/ic_search"
+                    android:tint="@color/ucf_ink_2" />
+
+                <TextView
+                    style="@style/Ucf.Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Search garages &amp; lots" />
+
+                <!-- Profile avatar (user's initials) -->
+                <TextView
+                    android:id="@+id/btn_avatar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_gold"
+                    android:gravity="center"
+                    android:text="KN"
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Permit filter chips (scroll sideways) -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="4dp">
+
+                    <!-- Selected chip = black -->
+                    <TextView
+                        android:id="@+id/chip_all"
+                        style="@style/Ucf.Chip"
+                        android:backgroundTint="@color/ucf_ink"
+                        android:text="All permits"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/chip_commuter"
+                        style="@style/Ucf.Chip"
+                        android:text="●  Commuter" />
+
+                    <TextView
+                        android:id="@+id/chip_resident"
+                        style="@style/Ucf.Chip"
+                        android:text="●  Resident" />
+
+                    <TextView
+                        android:id="@+id/chip_faculty"
+                        style="@style/Ucf.Chip"
+                        android:text="●  Faculty" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- Round map buttons (right side) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="52dp"
+            android:orientation="vertical">
+
+            <!-- Report button (opens the Report sheet) -->
+            <TextView
+                android:id="@+id/btn_report"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_pill"
+                android:backgroundTint="@color/ucf_ink"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:text="P"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <!-- Center on my location -->
+            <TextView
+                android:id="@+id/btn_locate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_pill"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:text="◎"
+                android:textColor="@color/ucf_ink"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ===== "GARAGES NEAR YOU" SHEET (starts 400dp down, overlaps the map) ===== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/bg_sheet"
+        android:backgroundTint="@color/ucf_bg"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="110dp">
+
+            <!-- Grab handle -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_pill"
+                android:backgroundTint="@color/ucf_track" />
+
+            <!-- Header row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Ucf.Title"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Garages near you"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/btn_see_all"
+                    style="@style/Ucf.BodyBold"
+                    android:text="See all"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_last_updated"
+                style="@style/Ucf.Caption"
+                android:layout_marginTop="2dp"
+                android:text="●  Live · updated 1 min ago" />
+
+            <!-- Prediction banner -->
+            <LinearLayout
+                android:id="@+id/banner_prediction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:backgroundTint="@color/ucf_gold_soft"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↗"
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_prediction_title"
+                        style="@style/Ucf.BodyBold"
+                        android:text="Garage B likely full in ~20 min"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/txt_prediction_detail"
+                        style="@style/Ucf.Caption"
+                        android:text="Busier than a usual Tuesday · Try Garage I" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Garage list. Later this becomes a RecyclerView, and one card becomes item_garage.xml -->
+            <LinearLayout
+                android:id="@+id/list_garages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Garage card: B -->
+                <LinearLayout
+                    android:id="@+id/card_garage_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_orange_soft"
+                        android:gravity="center"
+                        android:text="B"
+                        android:textColor="@color/ucf_orange"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/Ucf.BodyBold"
+                                android:text="Garage B" />
+
+                            <TextView
+                                style="@style/Ucf.Tag"
+                                android:backgroundTint="@color/ucf_orange_soft"
+                                android:text="● Filling fast"
+                                android:textColor="@color/ucf_orange" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Commuter · 0.3 mi" />
+
+                        <!-- Capacity bar: filled weight 88, empty weight 12 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_track"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="88"
+                                android:background="@drawable/bg_pill"
+                                android:backgroundTint="@color/ucf_orange" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.Title"
+                            android:text="88%"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="13 left" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Garage card: A -->
+                <LinearLayout
+                    android:id="@+id/card_garage_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_box"
+                        android:backgroundTint="@color/ucf_green_soft"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/ucf_green"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/Ucf.BodyBold"
+                                android:text="Garage A" />
+
+                            <TextView
+                                style="@style/Ucf.Tag"
+                                android:backgroundTint="@color/ucf_green_soft"
+                                android:text="● Open"
+                                android:textColor="@color/ucf_green" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:layout_marginTop="2dp"
+                            android:text="Commuter · Resident · 0.4 mi" />
+
+                        <!-- Capacity bar: filled weight 30, empty weight 70 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/ucf_track"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="30"
+                                android:background="@drawable/bg_pill"
+                                android:backgroundTint="@color/ucf_green" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="70" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.Title"
+                            android:text="30%"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="86 left" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ===== BOTTOM TAB BAR ===== -->
+    <include
+        layout="@layout/include_bottom_nav_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</FrameLayout>

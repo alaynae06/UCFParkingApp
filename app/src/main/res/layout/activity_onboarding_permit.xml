@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Onboarding step 2 - permit type -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Progress bar: step 2 of 2 (half filled) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_pill"
+        android:backgroundTint="@color/ucf_track"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_red" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/Ucf.Label"
+        android:layout_marginTop="28dp"
+        android:text="Step 2 of 2"
+        android:textColor="@color/ucf_ink" />
+
+    <TextView
+        style="@style/Ucf.Title"
+        android:layout_marginTop="8dp"
+        android:text="Which permit do you have?" />
+
+    <TextView
+        style="@style/Ucf.Subtitle"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"
+        android:text="We’ll highlight the garages and lots you can park in." />
+
+    <!-- Option: Commuter (SELECTED - black border + check) -->
+    <LinearLayout
+        android:id="@+id/option_commuter"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_box_selected"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+        <TextView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_box"
+            android:backgroundTint="@color/ucf_ink"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <TextView
+            style="@style/Ucf.BodyBold"
+            android:layout_width="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:text="Commuter" />
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_ink"
+            android:gravity="center"
+            android:text="✓"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Option: Resident -->
+    <LinearLayout
+        android:id="@+id/option_resident"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_box"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+        <TextView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_box"
+            android:backgroundTint="@color/ucf_grey"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <TextView
+            style="@style/Ucf.BodyBold"
+            android:layout_width="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:text="Resident" />
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/bg_pill_outline" />
+    </LinearLayout>
+
+    <!-- Option: Faculty & Staff -->
+    <LinearLayout
+        android:id="@+id/option_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_box"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+        <TextView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_box"
+            android:backgroundTint="@color/ucf_gold"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <TextView
+            style="@style/Ucf.BodyBold"
+            android:layout_width="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:text="Faculty &amp; Staff" />
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/bg_pill_outline" />
+    </LinearLayout>
+
+    <!-- Option: No permit yet -->
+    <LinearLayout
+        android:id="@+id/option_none"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_box"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+        <TextView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_box"
+            android:backgroundTint="@color/ucf_gold"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <TextView
+            style="@style/Ucf.BodyBold"
+            android:layout_width="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:text="No permit yet" />
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/bg_pill_outline" />
+    </LinearLayout>
+
+    <!-- Pushes the button to the bottom -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/btn_continue"
+        style="@style/Ucf.Button"
+        android:text="Continue" />
+
+    <TextView
+        android:id="@+id/btn_skip"
+        style="@style/Ucf.Caption"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:text="I’ll do this later" />
+</LinearLayout>

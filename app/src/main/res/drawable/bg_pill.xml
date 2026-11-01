@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bg_pill: white pill shape (fully rounded). Tinted per use: black buttons, red/grey progress bar, black check circle. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFFFFF"/>
+    <corners android:radius="100dp"/>
+</shape>

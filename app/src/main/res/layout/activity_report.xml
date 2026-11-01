@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen: Report - "What's happening?" sheet over a dimmed map -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg">
+
+    <!-- Map in the background -->
+    <include layout="@layout/include_campus_map" />
+
+    <!-- See-through black layer that dims the map -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ucf_scrim"
+        android:elevation="4dp" />
+
+    <!-- ===== REPORT SHEET (stuck to the bottom) ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_sheet"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="24dp">
+
+        <!-- Grab handle -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_track" />
+
+        <TextView
+            style="@style/Ucf.Title"
+            android:layout_marginTop="16dp"
+            android:text="What’s happening?"
+            android:textSize="22sp" />
+
+        <!-- Which garage you're reporting on (tap to change) -->
+        <TextView
+            android:id="@+id/btn_pick_garage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_grey_soft"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Garage B · you’re here  ▾"
+            android:textColor="@color/ucf_ink"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Row 1: Closed (selected) + Full -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- Closed (SELECTED: thick black border, same as selected permit) -->
+            <LinearLayout
+                android:id="@+id/option_closed"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_box_selected"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_red"
+                    android:gravity="center"
+                    android:text="✕"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Ucf.BodyBold"
+                    android:layout_marginTop="8dp"
+                    android:text="Closed"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Full -->
+            <LinearLayout
+                android:id="@+id/option_full"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_box"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_orange"
+                    android:gravity="center"
+                    android:text="!"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Ucf.BodyBold"
+                    android:layout_marginTop="8dp"
+                    android:text="Full"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: Spots open + Blocked / event -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <!-- Spots open -->
+            <LinearLayout
+                android:id="@+id/option_open"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_box"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_green"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Ucf.BodyBold"
+                    android:layout_marginTop="8dp"
+                    android:text="Spots open"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Blocked / event -->
+            <LinearLayout
+                android:id="@+id/option_blocked"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_box"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_grey"
+                    android:gravity="center"
+                    android:text="⊘"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Ucf.BodyBold"
+                    android:layout_marginTop="8dp"
+                    android:text="Blocked / event"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_submit_report"
+            style="@style/Ucf.Button"
+            android:layout_marginTop="20dp"
+            android:text="Report “Closed”" />
+    </LinearLayout>
+</FrameLayout>

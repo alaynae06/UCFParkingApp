@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- include_bottom_nav_map: bottom tab bar with the MAP tab highlighted.
+     Selected tab = pale-gold pill behind the icon + black bold text; other tabs are grey. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/bg_pill_outline"
+    android:elevation="10dp"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp">
+
+    <!-- Map tab (SELECTED) -->
+    <LinearLayout
+        android:id="@+id/nav_map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="28dp"
+            android:paddingVertical="4dp"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="@color/ucf_gold_soft"
+            android:contentDescription="Map"
+            android:src="@drawable/ic_map"
+            android:tint="@color/ucf_ink" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Map"
+            android:textColor="@color/ucf_ink"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Forum tab -->
+    <LinearLayout
+        android:id="@+id/nav_forum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="28dp"
+            android:paddingVertical="4dp"
+            android:contentDescription="Forum"
+            android:src="@drawable/ic_forum"
+            android:tint="@color/ucf_ink_3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Forum"
+            android:textColor="@color/ucf_ink_3"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Alerts tab -->
+    <LinearLayout
+        android:id="@+id/nav_alerts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="28dp"
+            android:paddingVertical="4dp"
+            android:contentDescription="Alerts"
+            android:src="@drawable/ic_bell"
+            android:tint="@color/ucf_ink_3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Alerts"
+            android:textColor="@color/ucf_ink_3"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Profile tab -->
+    <LinearLayout
+        android:id="@+id/nav_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="28dp"
+            android:paddingVertical="4dp"
+            android:contentDescription="Profile"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/ucf_ink_3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Profile"
+            android:textColor="@color/ucf_ink_3"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucf_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="110dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp">
+
+            <!-- header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Ucf.Title"
+                        android:text="Forum"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        style="@style/Ucf.Subtitle"
+                        android:text="Parking tips from fellow Knights"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btn_search"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_pill_outline"
+                    android:contentDescription="Search"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_search"
+                    android:tint="@color/ucf_ink" />
+            </LinearLayout>
+
+            <!-- filters -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:clipToPadding="false"
+                android:paddingVertical="2dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- selected chip -->
+                    <TextView
+                        android:id="@+id/chip_latest"
+                        style="@style/Ucf.Chip"
+                        android:backgroundTint="@color/ucf_ink"
+                        android:text="Latest"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/chip_top"
+                        style="@style/Ucf.Chip"
+                        android:background="@drawable/bg_pill_outline"
+                        android:elevation="0dp"
+                        android:text="Top this week" />
+
+                    <TextView
+                        android:id="@+id/chip_reports"
+                        style="@style/Ucf.Chip"
+                        android:background="@drawable/bg_pill_outline"
+                        android:elevation="0dp"
+                        android:text="Garage reports" />
+
+                    <TextView
+                        android:id="@+id/chip_tips"
+                        style="@style/Ucf.Chip"
+                        android:background="@drawable/bg_pill_outline"
+                        android:elevation="0dp"
+                        android:text="Tips" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- add tip button -->
+            <LinearLayout
+                android:id="@+id/composer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_pill_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/ucf_gold_soft"
+                    android:gravity="center"
+                    android:text="KN"
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/Ucf.Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="Share a tip or garage update…"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Add photo"
+                    android:src="@drawable/ic_image"
+                    android:tint="@color/ucf_ink_2" />
+            </LinearLayout>
+
+            <!-- feed -->
+            <!-- example posts -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- author row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_pill"
+                        android:backgroundTint="@color/ucf_ink"
+                        android:gravity="center"
+                        android:text="MR"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Maya R."
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="Commuter · 12 min ago"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Ucf.Tag"
+                        android:backgroundTint="@color/ucf_red_soft"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="Garage C"
+                        android:textColor="@color/ucf_red"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- post text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Garage C was full by 9:15 today. Top floors of Garage I still had plenty at 9:30, worth the extra walk."
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="14sp" />
+
+                <!-- upvotes, comments, menu -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="Upvote"
+                        android:src="@drawable/ic_upvote"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_marginStart="6dp"
+                        android:text="42"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="Comments"
+                        android:src="@drawable/ic_comment"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="8"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="More"
+                        android:src="@drawable/ic_more"
+                        android:tint="@color/ucf_ink_2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_pill"
+                        android:backgroundTint="@color/ucf_faculty"
+                        android:gravity="center"
+                        android:text="DT"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Devon T."
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="Faculty · 1 hr ago"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Ucf.Tag"
+                        android:backgroundTint="@color/ucf_green_soft"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="Tip"
+                        android:textColor="@color/ucf_green"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="The surface lots by the arena clear out right after the 10:30 classes let out. Found a spot there four days in a row."
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="Upvote"
+                        android:src="@drawable/ic_upvote"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_marginStart="6dp"
+                        android:text="31"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="Comments"
+                        android:src="@drawable/ic_comment"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="5"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="More"
+                        android:src="@drawable/ic_more"
+                        android:tint="@color/ucf_ink_2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_box"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_pill"
+                        android:backgroundTint="@color/ucf_grey"
+                        android:gravity="center"
+                        android:text="JL"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Ucf.BodyBold"
+                            android:text="Jess L."
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/Ucf.Caption"
+                            android:text="Resident · 3 hr ago"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Ucf.Tag"
+                        android:backgroundTint="@color/ucf_gold_soft"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="Question"
+                        android:textColor="@color/ucf_faculty"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Does anyone know if Garage H closes early on Saturday for the home game?"
+                    android:textColor="@color/ucf_ink"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="Upvote"
+                        android:src="@drawable/ic_upvote"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_marginStart="6dp"
+                        android:text="12"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="Comments"
+                        android:src="@drawable/ic_comment"
+                        android:tint="@color/ucf_ink_2" />
+
+                    <TextView
+                        style="@style/Ucf.Caption"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="14"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="More"
+                        android:src="@drawable/ic_more"
+                        android:tint="@color/ucf_ink_2" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- new post button -->
+    <TextView
+        android:id="@+id/btn_new_post"
+        style="@style/Ucf.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="108dp"
+        android:elevation="6dp"
+        android:paddingHorizontal="22dp"
+        android:text="+  New post"
+        android:textStyle="normal" />
+
+    <!-- bottom bar -->
+    <include
+        layout="@layout/include_bottom_nav_forum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</FrameLayout>

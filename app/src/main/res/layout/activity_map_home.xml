@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Screen: Map - Home. Map on top, "Garages near you" sheet below, tab bar at the bottom. -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ucf_bg">
 
-    <!-- ===== MAP AREA ===== -->
+    <!-- map -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="440dp">
@@ -19,7 +19,7 @@
             android:paddingHorizontal="16dp"
             android:paddingTop="16dp">
 
-            <!-- Search bar -->
+            <!-- search bar -->
             <LinearLayout
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                     android:layout_weight="1"
                     android:text="Search garages &amp; lots" />
 
-                <!-- Profile avatar (user's initials) -->
+                <!-- profile icon -->
                 <TextView
                     android:id="@+id/btn_avatar"
                     android:layout_width="32dp"
@@ -59,7 +59,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Permit filter chips (scroll sideways) -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,7 +71,6 @@
                     android:orientation="horizontal"
                     android:paddingBottom="4dp">
 
-                    <!-- Selected chip = black -->
                     <TextView
                         android:id="@+id/chip_all"
                         style="@style/Ucf.Chip"
@@ -98,7 +96,7 @@
             </HorizontalScrollView>
         </LinearLayout>
 
-        <!-- Round map buttons (right side) -->
+        <!-- map buttons (right side) -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +105,7 @@
             android:layout_marginBottom="52dp"
             android:orientation="vertical">
 
-            <!-- Report button (opens the Report sheet) -->
+            <!-- report button -->
             <TextView
                 android:id="@+id/btn_report"
                 android:layout_width="40dp"
@@ -135,7 +133,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <!-- ===== "GARAGES NEAR YOU" SHEET (starts 400dp down, overlaps the map) ===== -->
+    <!-- garages list -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -152,7 +150,6 @@
             android:paddingTop="10dp"
             android:paddingBottom="110dp">
 
-            <!-- Grab handle -->
             <View
                 android:layout_width="40dp"
                 android:layout_height="4dp"
@@ -160,7 +157,6 @@
                 android:background="@drawable/bg_pill"
                 android:backgroundTint="@color/ucf_track" />
 
-            <!-- Header row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,7 +184,7 @@
                 android:layout_marginTop="2dp"
                 android:text="●  Live · updated 1 min ago" />
 
-            <!-- Prediction banner -->
+            <!-- prediction banner -->
             <LinearLayout
                 android:id="@+id/banner_prediction"
                 android:layout_width="match_parent"
@@ -227,14 +223,14 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Garage list. Later this becomes a RecyclerView, and one card becomes item_garage.xml -->
+            <!-- Garage list -->
             <LinearLayout
                 android:id="@+id/list_garages"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Garage card: B -->
+                <!-- test garage card -->
                 <LinearLayout
                     android:id="@+id/card_garage_b"
                     android:layout_width="match_parent"
@@ -285,7 +281,7 @@
                             android:layout_marginTop="2dp"
                             android:text="Commuter · 0.3 mi" />
 
-                        <!-- Capacity bar: filled weight 88, empty weight 12 -->
+                        <!-- capacity bar -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="4dp"
@@ -326,7 +322,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Garage card: A -->
                 <LinearLayout
                     android:id="@+id/card_garage_a"
                     android:layout_width="match_parent"
@@ -377,7 +372,7 @@
                             android:layout_marginTop="2dp"
                             android:text="Commuter · Resident · 0.4 mi" />
 
-                        <!-- Capacity bar: filled weight 30, empty weight 70 -->
+                        <!-- capacity bar -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="4dp"
@@ -421,7 +416,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- ===== BOTTOM TAB BAR ===== -->
+    <!-- bottom bar -->
     <include
         layout="@layout/include_bottom_nav_map"
         android:layout_width="match_parent"

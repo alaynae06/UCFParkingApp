@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- bg_box_selected: white rounded box with thick black border. The selected option card. -->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="#FFFFFF"/>
     <corners android:radius="12dp"/>

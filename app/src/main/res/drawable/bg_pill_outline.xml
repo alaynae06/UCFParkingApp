@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- bg_pill_outline: white pill with thin grey border. Used for the empty radio circles. -->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="#FFFFFF"/>
     <corners android:radius="100dp"/>

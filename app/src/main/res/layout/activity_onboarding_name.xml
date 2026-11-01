@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Screen: Onboarding step 1 - preferred name -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <!-- Progress bar: step 1 of 2 (red part = 1, empty part = 9) -->
+    <!-- progress bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="4dp"
@@ -45,7 +45,6 @@
         android:hint="e.g. Alex"
         android:inputType="textPersonName|textCapWords" />
 
-    <!-- Pushes the button to the bottom -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"

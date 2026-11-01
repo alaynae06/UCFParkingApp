@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- bg_sheet: white panel with only the TOP corners rounded. Bottom sheets that slide up over the map. -->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="#FFFFFF"/>
     <corners android:topLeftRadius="26dp" android:topRightRadius="26dp"

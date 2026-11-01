@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Screen: Report - "What's happening?" sheet over a dimmed map -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ucf_bg">
 
-    <!-- Map in the background -->
+    <!-- background map -->
     <include layout="@layout/include_campus_map" />
 
-    <!-- See-through black layer that dims the map -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/ucf_scrim"
         android:elevation="4dp" />
 
-    <!-- ===== REPORT SHEET (stuck to the bottom) ===== -->
+    <!-- report sheet -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +26,6 @@
         android:paddingTop="10dp"
         android:paddingBottom="24dp">
 
-        <!-- Grab handle -->
         <View
             android:layout_width="40dp"
             android:layout_height="4dp"
@@ -41,7 +39,7 @@
             android:text="What’s happening?"
             android:textSize="22sp" />
 
-        <!-- Which garage you're reporting on (tap to change) -->
+        <!-- garage options -->
         <TextView
             android:id="@+id/btn_pick_garage"
             android:layout_width="wrap_content"
@@ -56,14 +54,12 @@
             android:textSize="11sp"
             android:textStyle="bold" />
 
-        <!-- Row 1: Closed (selected) + Full -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <!-- Closed (SELECTED: thick black border, same as selected permit) -->
             <LinearLayout
                 android:id="@+id/option_closed"
                 android:layout_width="0dp"
@@ -92,7 +88,6 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- Full -->
             <LinearLayout
                 android:id="@+id/option_full"
                 android:layout_width="0dp"
@@ -122,14 +117,13 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Row 2: Spots open + Blocked / event -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:orientation="horizontal">
 
-            <!-- Spots open -->
+            <!-- spots open -->
             <LinearLayout
                 android:id="@+id/option_open"
                 android:layout_width="0dp"
@@ -158,7 +152,7 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- Blocked / event -->
+            <!-- blocked/event option -->
             <LinearLayout
                 android:id="@+id/option_blocked"
                 android:layout_width="0dp"

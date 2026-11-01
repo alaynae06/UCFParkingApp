@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet"
+    android:elevation="8dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="28dp">
+
+    <!-- button -->
+    <TextView
+        android:id="@+id/btn_notify"
+        style="@style/Ucf.Button"
+        android:layout_width="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pill_outline"
+        android:backgroundTint="@null"
+        android:text="Notify me"
+        android:textColor="@color/ucf_ink" />
+
+    <!-- black button -->
+    <TextView
+        android:id="@+id/btn_directions"
+        style="@style/Ucf.Button"
+        android:layout_width="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1"
+        android:text="Directions" />
+</LinearLayout>
